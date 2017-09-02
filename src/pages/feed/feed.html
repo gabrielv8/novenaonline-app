@@ -12,15 +12,16 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
+  <ion-card *ngFor="let marca of list_marcas">
     <ion-item>
       <ion-avatar item-start>
         <img src="assets/images/capa_pe.jpg">
       </ion-avatar>
-      <h2 class="feed_title">{{ getName() }}</h2>
+      <h2 class="feed_title">{{ marca.name_marca }}</h2>
       <p>Agosto 24, 2017</p>
     </ion-item>
 
+    <!--<img [src]="'assets/images/capa_pe.jpg'+marca.url_img"> bind de imagem-->
     <img src="assets/images/capa_pe.jpg">
 
     <ion-card-content>
@@ -31,18 +32,18 @@
       <ion-col>
         <button ion-button icon-left clear small>
             <ion-icon name="thumbs-up"></ion-icon>
-            <div>12 Likes</div>
+            <div>{{ objeto_feed.name_marca }}</div>
           </button>
       </ion-col>
       <ion-col>
         <button ion-button icon-left clear small>
             <ion-icon name="text"></ion-icon>
-            <div>4 Comments</div>
+            <div>{{ objeto_feed.key_marca }}</div>
           </button>
       </ion-col>
       <ion-col center text-center>
         <ion-note>
-          Now
+            {{ objeto_feed.tipo_veiculo }}
         </ion-note>
       </ion-col>
     </ion-row>
